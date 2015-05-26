@@ -85,8 +85,8 @@
 
 * Analyse the performance of each of the drift terms calculation methods, and the accuracy of the frozen curve approximation.
 
-  - Please refer to `analyze_plot()` in `Assignment2/main.py`
-  - Generate an output graph `analyze.pdf`, we can see the performance between different methods is very close: actually the exact calculation is more accurate, but the error of frozen curve approximation method is smaller than 0.01 digits / 2% error, which is a fair enough approximation.
+  - The performance between different methods is very close, though the exact calculation is more accurate in theory. 
+  - But the error of frozen curve approximation method is smaller than 0.01 digits / 2% error, a good enough approximation.
   
 ### Usage
 
