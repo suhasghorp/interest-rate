@@ -23,7 +23,7 @@ def calc_swapRate():
     ''' calculate swap rate via Monte Carlo '''
     ls_liborInit = read_libor()
 
-    kos = Knock_Out_Swap(ls_liborInit, i_MC=2000, b_frozenCurve=True) # input fixed rate
+    kos = Knock_Out_Swap(ls_liborInit, i_MC=2000, b_frozenCurve=True)
     print 'Use 2,000 simulated paths to carry out the calculation (the exact calculation) - '
     print 'The break-even rate on the fixed leg of the swap: \t', kos.swap_rate(), '\n'
 
@@ -39,18 +39,18 @@ def calc_swapRate():
 def analyze_plot():
     ''' plot Libor forward simulation path '''
     ls_liborInit = read_libor()
-    Libor_Market_curve=[]
+    ls_liborMarket_curves = []
 
     for i in range(0,20):
-        my_Libor_Market = Libor_Market(ls_liborInit,80)
-        my_Libor_Market.simulate()
-        Libor_Market_curve.append(np.asarray(my_Libor_Market.ls[4][:-4]))
+        libor_market = Libor_Market(ls_liborInit,80)
+        libor_market.simulate()
+        ls_liborMarket_curves.append(np.asarray(libor_market.ls[4][:-4]))
   
     for i in range(0,10):
-        plt.plot(np.linspace(1, 20, 19*4+1)[:-1], Libor_Market_curve[i])
+        plt.plot(np.linspace(1, 20, 19*4+1)[:-1], ls_liborMarket_curves[i])
 
     plt.xlabel("Time (Year)")
-    plt.ylabel("Libor Forward");
+    plt.ylabel("Libor Forward Rate (%)");
     plt.title("Libor Forward Simulation Path")
     plt.savefig('analyze.pdf')
     plt.show()
