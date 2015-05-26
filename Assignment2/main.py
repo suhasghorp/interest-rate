@@ -58,8 +58,8 @@ def analyze_plot():
 
 
 def main():
-    #calc_swapRate()
-    analyze_plot()
+    calc_swapRate()
+    #analyze_plot()
     
 
 if __name__ == '__main__':
