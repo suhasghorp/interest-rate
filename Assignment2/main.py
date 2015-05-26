@@ -37,7 +37,7 @@ def calc_swapRate():
 
 
 def analyze_plot():
-    ''' plot Libor forward simulation path '''
+    ''' plot Libor forward simulation path, acknowledge to Haotian's suggestion '''
     ls_liborInit = read_libor()
     ls_liborMarket_curves = []
 
